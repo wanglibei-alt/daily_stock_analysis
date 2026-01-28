@@ -1,0 +1,32 @@
+# 全局参数（不变的参数放在这里）
+global:
+  start_date: "2025-01-01"
+  end_date: "2025-12-31"
+  frequency: "daily"
+  indicators:
+    ma: [5, 10, 20]
+    rsi: 14
+  # 其他通用参数...
+
+# 三个分组：每组可以单独覆盖参数或设置自己的股票列表
+groups:
+  - name: "group_1"
+    tickers:
+      - "000001.SZ"
+      - "600000.SH"
+    params:
+      # 在这里覆盖或添加该组特有参数（如果没有特有参数，可留空）
+      indicators:
+        ma: [5, 10, 20]
+  - name: "group_2"
+    tickers:
+      - "000002.SZ"
+      - "600004.SH"
+    params:
+      # 仅示例：覆盖某些参数
+      frequency: "weekly"
+  - name: "group_3"
+    tickers:
+      - "000003.SZ"
+      - "600006.SH"
+    params: {}
